@@ -1,0 +1,21 @@
+{
+  "name": "alivetimer",
+  "version": "0.2.0",
+  "main": "main.js",
+  "type": "commonjs",
+  "scripts": {
+    "check": "companion-module-check",
+    "package": "companion-module-build"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "^22.14"
+  },
+  "dependencies": {
+    "@companion-module/base": "^1.4.3"
+  },
+  "devDependencies": {
+    "@companion-module/tools": "^2.0.0"
+  },
+  "prettier": "@companion-module/tools/.prettierrc.json"
+}

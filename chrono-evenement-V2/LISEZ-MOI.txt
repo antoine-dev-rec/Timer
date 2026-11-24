@@ -1,0 +1,77 @@
+CHRONO EVENEMENT  -  VERSION 2 (Alive Events)
+
+1. CREER L'EXECUTABLE (une seule fois, sur un PC Windows)
+   - Installer Node.js (version LTS) : https://nodejs.org
+   - Double-cliquer sur build.bat (connexion internet requise, quelques minutes)
+   - Le .exe portable apparait dans le dossier "dist". Il se copie sur cle USB et se lance sur
+     n'importe quel PC Windows, sans installation.
+   - Test sans creer l'exe : "npm install" puis "npm start" dans ce dossier.
+   - Icone : build/icon.png (remplacable, PNG 512x512, avant build.bat).
+
+2. DEUX ONGLETS
+   EXPLOITATION = ce que l'on confie au client / a la "toppeuse". Rien d'autre :
+   - apercu du timer, Lancer / Pause / Reinitialiser (Entree / Espace / R)
+   - les 10 raccourcis pre-parametres (un clic, ou touches & e " ' ( - e _ c a)
+   - "Creer ou modifier un raccourci de temps" : choisir le raccourci, ecrire le titre, choisir le temps, Enregistrer.
+     C'est tout : le raccourci est pret a etre utilise.
+   - le message a l'orateur : texte libre, Afficher / Masquer (touche M), "Memoriser ce message",
+     messages memorises ("Message memorise 1", "Message memorise 2"...) envoyes en un clic
+   PARAMETRES = reserve au technicien : minuteur (mode, duree, depassement, format, titre), raccourcis,
+   messages memorises, couleurs par seuils, affichage (couleurs, police, taille, fond transparent, image),
+   placement du message, sortie (ouvrir / plein ecran / fermer, format, ecran, premier plan), reseau et Stream Deck, export.
+
+3. COULEURS SELON LE TEMPS RESTANT (decompte uniquement)
+   - Parametres > "Couleurs selon le temps restant". Seuils orange et rouge au choix (minutes + secondes),
+     couleurs vert / orange / rouge modifiables, application aux chiffres ou au fond.
+   - Par defaut : vert au-dessus de 3:00, orange de 3:00 a 0:00, rouge a zero et pendant le depassement.
+
+4. DEPASSEMENT (compter apres zero)
+   - Parametres > Minuteur : case "Continuer a compter apres zero" (mode Decompte).
+   - Apres 00:00 l'affichage passe a +00:01, +00:02... (en rouge avec les seuils par defaut).
+   - Le clignotement a zero (2 fois par seconde) dure 5 secondes apres zero quand le depassement est actif.
+     Sans depassement, le chrono s'arrete a 00:00 et clignote.
+
+5. RACCOURCIS (10 memoires) - Parametres > Raccourcis (le Minuteur y est fusionne)
+   - Une ligne = un raccourci complet : nom, mode (decompte / compte / heure), temps, format, titre de la session,
+     message a l'orateur (+ "afficher au rappel"), "lancer au rappel", "continuer apres zero". Puis Enregistrer. C'est pret.
+   - Les cases en haut ajoutent a tous les enregistrements l'apparence et/ou la resolution de l'ecran actuel.
+   - Le reglage direct du minuteur en cours reste disponible dans le panneau replie "Minuteur en cours".
+   - Changer le titre ou le message ne deplace jamais les chiffres du chrono et ne touche pas au temps.
+   - L'ancien onglet "Configuration" s'appelle "Import/export configuration".
+   - Les memoires de la V1 sont conservees et fonctionnent comme avant.
+
+6. MESSAGES
+   - 20 emplacements numerotes. On les memorise depuis Exploitation (bouton "Memoriser ce message", prend le premier
+     emplacement libre) ; un clic les envoie et les affiche. La croix supprime un message apres confirmation
+     (deuxieme clic). Les numeros ne changent jamais quand on supprime (pratique pour le Stream Deck : /msg1../msg20).
+   - Parametres > Messages memorises : modification du texte de chaque message.
+   - Parametres > "Message : placement et style" : sous le chrono, ou en surcouche par-dessus le chrono
+     dans une zone definie (position, largeur, hauteur, fond, opacite, taille du texte).
+
+7. STREAM DECK, COMPANION, PAGE WEB (version bureau)
+   - Parametres > "Reseau et Stream Deck" liste les adresses.
+   - Page web du chrono : http://127.0.0.1:9595/ (ou l'adresse reseau affichee si l'acces reseau est autorise).
+     Les commandes depuis le reseau sont refusees tant que l'option correspondante n'est pas cochee.
+   - Etat en JSON : http://127.0.0.1:9595/api/state (temps, statut, couleur de seuil, message, noms des memoires).
+   - Commandes : /start /pause /toggle /reset /close /fullscreen /macro1../macro10 /msg-toggle /msg-show /msg-hide /msg1../msg20 /out-fill1../out-fill8 /out-window1../out-window8
+   - Application Stream Deck seule : action Systeme > Site web, "Acces en arriere-plan" coche. Pas de retour d'etat.
+   - Touches globales : F13..F22 = raccourcis 1 a 10, F23 lancer (play), F24 pause/reprise (bascule),
+     Ctrl+F16 pause seule, Ctrl+F13 reinitialiser, Ctrl+F14 fermer la sortie, Ctrl+F15 message afficher/masquer.
+   - Avec retour d'etat en temps reel : module Bitfocus Companion fourni dans le dossier "companion-module".
+     50 boutons colores prets a glisser sur le Stream Deck : temps colore (vert/orange/rouge, clignote en depassement),
+     PLAY allume en vert quand ca tourne, PAUSE allume en orange en pause, PLAY/PAUSE, RESET, message allume en bleu,
+     raccourcis 1-10 avec nom et duree (allume quand actif), messages memorises M1-M20, sortie
+     (dont SORTIE 1/2/3 plein ecran ou fenetre pour envoyer la sortie sur l'ecran voulu). Le temps passe en orange en pause.
+     Mise en page conseillee pour 15 touches et XL : companion-module/GUIDE-STREAMDECK.txt (README.txt pour l'installation).
+   - Limite connue : Companion et le Stream Deck n ont pas pu etre testes en reel (module verifie par simulation). Voir LISEZ-MOI-TECHNICIENS.txt.
+
+8. PARAMETRES A DISTANCE (depuis un autre ordinateur du reseau, ex. la regie)
+   - Sur l'ordinateur du chrono : Parametres > Reseau et Stream Deck > cocher
+     "Autoriser l'acces aux Parametres depuis un autre ordinateur", puis saisir un code d'acces (conseille).
+   - Sur l'autre ordinateur : ouvrir un navigateur a l'adresse http://IP-DU-CHRONO:9595/remote (l'adresse exacte est affichee
+     dans l'application). Saisir le code. On retrouve les onglets Exploitation et Parametres, avec l'etat en direct :
+     lancer / pause, raccourcis, messages, seuils, couleurs, police, format, fond, ouverture ou fermeture de la sortie...
+   - Ce qui reste reserve a l'ordinateur du chrono : le choix de l'ecran, les options reseau, l'import de configuration.
+   - Si cette option est decochee, le serveur redevient limite a l'ordinateur local : la page n'est plus joignable du reseau.
+   - Pare-feu Windows : autoriser l'application sur le reseau prive si l'autre machine n'arrive pas a se connecter.
+   - A utiliser sur un reseau de confiance (reseau de regie) : le code protege l'acces mais le trafic n'est pas chiffre.

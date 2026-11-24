@@ -1,0 +1,21 @@
+{
+  "id": "alivetimer",
+  "name": "alivetimer",
+  "shortname": "alivetimer",
+  "description": "Pilote le chrono d'événement Alive Events (lancer, pause, mémoires, messages) avec retour d'état",
+  "manufacturer": "Alive Events",
+  "products": ["Chrono événement"],
+  "keywords": ["timer", "countdown", "chrono", "stage"],
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "",
+  "bugs": "",
+  "maintainers": [{ "name": "Alive Events", "email": "contact@example.com" }],
+  "legacyIds": [],
+  "runtime": {
+    "type": "node22",
+    "api": "nodejs-ipc",
+    "apiVersion": "0.0.0",
+    "entrypoint": "../main.js"
+  }
+}

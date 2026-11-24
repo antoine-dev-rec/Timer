@@ -1,0 +1,52 @@
+GUIDE STREAM DECK - Chrono evenement (Alive Events)
+===================================================
+
+Les boutons sont fournis tout faits dans Companion (onglet "Presets", connexion "Chrono evenement").
+Il suffit de les glisser sur la page : chaque bouton est deja colore, lisible et branche sur le chrono.
+(Le module n'a pas encore ete charge dans un vrai Companion : voir README.txt.)
+
+CE QUI S'ALLUME
+- TEMPS          : vert / orange / rouge selon les seuils regles dans l'application, gris quand le chrono est pret,
+                   ORANGE (comme le bouton PAUSE) quand le chrono est en pause, CLIGNOTE en rouge au depassement.
+- PLAY           : vert tant que le chrono tourne (y compris en depassement).
+- PAUSE          : orange tant que le chrono est en pause.
+- PLAY / PAUSE   : vert en cours, orange en pause (bascule).
+- MESSAGE        : bleu quand un message est affiche sur la sortie.
+- RACCOURCI 1-10 : affiche son numero, son nom et sa duree ; bleu quand c'est le raccourci actif.
+- M1-M20         : affiche le message memorise ; bleu quand CE message est affiche.
+- SORTIE OUVRIR  : violet quand la fenetre de sortie est ouverte.
+- SORTIE 1/2/3 PLEIN ECRAN ou FENETRE : envoie la sortie sur l'ecran 1, 2 ou 3 ; violet quand c'est le mode actuel.
+
+CATEGORIES DE PRESETS
+ 1 - Suivi : Temps, Statut, Titre, Message affiche
+ 2 - Commandes : PLAY, PAUSE, PLAY/PAUSE, RESET
+ 3 - Message : MESSAGE (bascule), MESSAGE ON, MESSAGE OFF
+ 4 - Sortie : Ouvrir, Fermer, Plein ecran, Sortie 1/2/3 plein ecran, Sortie 1/2/3 fenetre
+ 5 - Raccourcis : Raccourci 1 a 10
+ 6 - Messages memorises : M1 a M20
+
+MISE EN PAGE CONSEILLEE - STREAM DECK 15 TOUCHES (5 x 3), 3 pages
+ Page 1 "Regie"
+   Temps | Statut | PLAY | PAUSE | RESET
+   Titre | Message affiche | MESSAGE | SORTIE OUVRIR | SORTIE FERMER
+   Raccourci 1 | Raccourci 2 | Raccourci 3 | Raccourci 4 | Raccourci 5
+ Page 2 "Raccourcis"
+   Temps | PLAY | PAUSE | RESET | PLEIN ECRAN
+   Raccourci 1 | 2 | 3 | 4 | 5
+   Raccourci 6 | 7 | 8 | 9 | 10
+ Page 3 "Messages"
+   Temps | PLAY | PAUSE | RESET | MESSAGE OFF
+   M1 | M2 | M3 | M4 | M5
+   M6 | M7 | M8 | M9 | M10
+ (Ajouter sur chaque page un bouton Companion "Aller a la page" pour naviguer, a la place d'un Message affiche ou Titre si besoin.)
+
+MISE EN PAGE CONSEILLEE - STREAM DECK XL (8 x 4), 1 page
+   Temps | Statut | Titre | Message affiche | PLAY | PAUSE | PLAY/PAUSE | RESET
+   Raccourci 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+   Raccourci 9 | Raccourci 10 | MESSAGE ON | MESSAGE OFF | SORTIE OUVRIR | SORTIE FERMER | PLEIN ECRAN | (libre)
+   M1 | M2 | M3 | M4 | M5 | M6 | M7 | M8
+
+SANS COMPANION (application Stream Deck seule)
+ Pas de retour d'etat ni de couleurs. Touches globales a assigner (Systeme > Raccourci clavier) :
+   F13..F22 = raccourcis 1 a 10 | F23 = lancer | F24 = pause/reprise | Ctrl+F16 = pause seule
+   Ctrl+F13 = reinitialiser | Ctrl+F14 = fermer la sortie | Ctrl+F15 = message afficher/masquer

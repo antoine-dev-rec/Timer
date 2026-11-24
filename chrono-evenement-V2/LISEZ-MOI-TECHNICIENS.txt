@@ -1,0 +1,31 @@
+CHRONO EVENEMENT (Alive Events) - POUR LES TECHNICIENS / TESTS
+==============================================================
+
+Ce dossier contient le code. Il faut produire deux fichiers a installer (une seule fois) :
+
+A. L'EXECUTABLE (.exe portable, aucune installation sur les PC de diffusion)
+   Methode 1 - un PC Windows avec Node.js (https://nodejs.org, version LTS) et internet :
+     double-cliquer sur build.bat  ->  "dist\Chrono Evenement ... .exe". Ce fichier se copie sur n'importe quel PC.
+   Methode 2 - sans rien installer : GitHub
+     1. Creer un depot GitHub (prive) et y deposer le contenu de ce dossier (y compris .github).
+     2. Onglet Actions > "Construire l'executable..." > Run workflow.
+     3. Telecharger les resultats (artefacts) : Chrono-Evenement-exe et Module-Companion.
+
+B. LE MODULE COMPANION (boutons Stream Deck colores) - sans npm cote Companion
+   - Si vous avez la methode GitHub : le fichier .tgz est dans l'artefact "Module-Companion".
+   - Sinon : companion-module\PREPARER-COMPANION.bat (Node.js + internet, une fois) cree le .tgz.
+   - Dans Companion : Modules > importer un module (Import module package) > choisir le .tgz.
+     Puis Connections > Add > "Chrono evenement" > IP du PC chrono + port 9595.
+   - Mise en page des boutons : companion-module\GUIDE-STREAMDECK.txt
+
+C. POINTS A TESTER ET A REMONTER
+   - Transparence reelle de la sortie, glisser/deplacer la fenetre, plein ecran sur l'ecran 1/2/3.
+   - Touches F13-F24 globales, boutons Companion (PLAY/PAUSE allumes, temps colore, orange en pause).
+   - Page reseau http://IP:9595/ et acces aux parametres http://IP:9595/remote (code d'acces).
+   - Raccourcis : une ligne = nom, mode, temps, format, titre, message ; Enregistrer ; rappel par touche ou bouton.
+Etat : application et module valides par tests automatises uniquement ; non essayes sur machine Windows reelle ni avec un vrai Companion.
+
+D. PUBLIER UNE VERSION TELECHARGEABLE (GitHub Releases)
+   Dans le depot : Releases > Create a new release > Tag "v2.1" (nouveau tag) > Publish.
+   GitHub fabrique les fichiers et les ajoute a la release : lien de telechargement stable pour tout le monde
+   (depot public) ou pour les personnes invitees (depot prive).
